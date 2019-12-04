@@ -26,15 +26,13 @@ aTag.forEach(item => {
   });
 })
 
-let funBus = document.querySelector('img')
+// Fun Bus Img Things (Coded over)
 
-funBus.addEventListener('click', () => {
-  funBus.style.transform = 'rotate(1turn)';
-  funBus.style.transition = 'transform 1s'
-})
+// let funBus = document.querySelector('img')
 
-// funBus.addEventListener('mouseleave', () => {
-//   funBus.style.transform = '';
+// funBus.addEventListener('click', () => {
+//   funBus.style.transform = 'rotate(1turn)';
+//   funBus.style.transition = 'transform 1s'
 // })
 
 // Button Styles
@@ -57,19 +55,26 @@ button.forEach(item => {
   })
 })
 
+// Footer Things
+
 let footer = document.querySelector('footer');
 
 footer.addEventListener('dblclick', () => {
   footer.style.background = 'green';
 })
 
-// let paragraph = document.querySelectorAll('p');
+// Paragraph Things
 
-// paragraph.forEach(item => {
-//   item.addEventListener('keydown', () => {
-//     item.style.transform = 'rotate(1turn)';
-//   })
-// })
+let paragraph = document.querySelectorAll('p');
+
+paragraph.forEach(item => {
+  item.addEventListener('mousedown', () => {
+    item.style.transform = 'rotate(1turn)';
+    item.style.transition = 'transform 1s';
+  })
+})
+
+// Middle Section Things
 
 let destinationBox = document.querySelectorAll('.destination');
 
@@ -97,7 +102,17 @@ window.addEventListener('scroll', () => {
   middleContent.style.color = 'green';
 })
 
-// window.addEventListener('load', () => {
-//   middleContent.style.transform = 'rotate(1turn)';
-// })
+// GSAP Testing
 
+let img = document.querySelectorAll('img');
+
+let timeLine = gsap.timeline();
+
+img.forEach(item => {
+  item.addEventListener('click', () => {
+    timeLine.to(item, {rotation: 27, x: 100, duration: 1})
+            .to(item, {rotation: 0, x: 0, duration: 1})
+  })
+})
+
+// gsap.to("img", {rotation: 27, x: 100, duration: 1});
